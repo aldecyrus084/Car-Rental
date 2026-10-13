@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using MyApp.Application.Features.Users.Create;
+using MyApp.Application.Features.Users.Get;
 
 namespace MyApp.API.Controllers
 {
@@ -27,6 +28,21 @@ namespace MyApp.API.Controllers
             {
                 return BadRequest(response);
             }
+        }
+
+        [HttpGet("{id:guid}")]
+        public async Task<IActionResult> GetUserById(Guid id)
+        {
+            var command = new GetUserByIdCommand
+            {
+                UserId = id
+            };
+
+            var response = await _mediator.Send(command);
+            if (!response.isSuccess)
+                return NotFound(response.message);
+
+            return Ok(response);
         }
     }
 }

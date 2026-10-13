@@ -16,6 +16,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MyApp.API.Controllers.CustomerDocumentController",
+    "Method": "CreateCustomerDocument",
+    "RelativePath": "api/customer-document",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "MyApp.Application.Features.Customer.Create.CreateCustomerCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MyApp.API.Controllers.UserController",
     "Method": "CreateUser",
     "RelativePath": "api/User",
@@ -42,6 +58,22 @@
       {
         "Name": "command",
         "Type": "MyApp.Application.Features.UserRole.Create.CreateUserRoleCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApp.API.Controllers.UserController",
+    "Method": "GetUserById",
+    "RelativePath": "api/User/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
         "IsRequired": true
       }
     ],

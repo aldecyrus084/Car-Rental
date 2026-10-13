@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <Folder Include="DTOs\UserRole\" />
-    <Folder Include="DTOs\User\" />
   </ItemGroup>
 
 </Project>

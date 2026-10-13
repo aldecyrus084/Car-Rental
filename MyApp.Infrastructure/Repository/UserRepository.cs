@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MyApp.Application.DTOs.User;
 using MyApp.Application.Interfaces.Repository;
 using MyApp.Domain.Entities;
 using MyApp.Infrastructure.Persistence;
@@ -49,7 +50,8 @@ namespace MyApp.Infrastructure.Repository
 
         public async Task<Users?> GetUserByIdAsync(Guid id)
         {
-            return await _dbContext.Users.FirstOrDefaultAsync(x => x.UserId == id);
+            return await _dbContext.Users.Include(x => x.UserRole).FirstOrDefaultAsync(x => x.UserId == id);
+                
         }
     }
 }

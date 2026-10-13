@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyApp.Infrastructure.UnitOfWork
+namespace MyApp.Infrastructure.Services
 {
     public class UnitOfWork : IUnitOfWork
     {
@@ -25,7 +25,7 @@ namespace MyApp.Infrastructure.UnitOfWork
         public async Task CommitTransactionAsync(CancellationToken cToken = default)
         {
             var transaction = _context.Database.CurrentTransaction;
-            if(transaction != null)
+            if (transaction != null)
             {
                 await transaction.CommitAsync(cToken);
             }
@@ -34,7 +34,7 @@ namespace MyApp.Infrastructure.UnitOfWork
         public async Task RollbackTransactionAsync(CancellationToken cToken = default)
         {
             var transaction = _context.Database.CurrentTransaction;
-            if(transaction != null)
+            if (transaction != null)
             {
                 await transaction.RollbackAsync(cToken);
             }

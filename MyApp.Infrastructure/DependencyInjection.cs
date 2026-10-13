@@ -1,9 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MyApp.Application.Interfaces;
+using MyApp.Application.Interfaces.FileStorage;
 using MyApp.Application.Interfaces.Repository;
 using MyApp.Infrastructure.Persistence;
 using MyApp.Infrastructure.Repository;
+using MyApp.Infrastructure.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +34,15 @@ namespace MyApp.Infrastructure
             services.AddScoped<IVehicleRepository, VehicleRepository>();
             services.AddScoped<IVehicleImagesRepository, VehicleImagesRepository>();
             services.AddScoped<IVehicleTypeRepository, VehicleTypesRepository>();
+            services.AddScoped<IRentalAgreementRepository, RentalAgreementRepository>();
+            services.AddScoped<IPricingAreaRepository, PricingAreaRepository>();
+            services.AddScoped<IPricingAreaRuleRepository, PricingAreaRuleRepository>();
+            services.AddScoped<IVehicleMaintenanceRepository, VehicleMaintenanceRepository>();
+            services.AddScoped<IFileStorageServices, FileStorageServices>();
+            services.AddScoped<IRentalDestinationRepository, RentalDestinationRepository>();
+            services.AddScoped<IRentalVehicleRepository, RentalVehicleRepository>();
+            services.AddScoped<IRentalDocumentRepository, RentalDocumentRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             return services;
         }
     }
