@@ -10,7 +10,7 @@ namespace MyApp.Domain.Entities
     {
         public Guid UserRoleId { get; private set; }
         public string Name { get; private set; }
-        public string Description { get; private set; }
+        public string? Description { get; private set; }
         public bool IsActive { get; private set; }
 
         protected UserRoles() { } // For EF Core

@@ -28,7 +28,7 @@ namespace MyApp.Infrastructure.Repository
 
         public async Task<IEnumerable<Users>> GetAllUsersAsync()
         {
-            return await _dbContext.Users.ToListAsync();
+            return await _dbContext.Users.Include(x => x.UserRole).ToListAsync();
         }
 
         public async Task<Users?> GetActiveUserById(Guid id)

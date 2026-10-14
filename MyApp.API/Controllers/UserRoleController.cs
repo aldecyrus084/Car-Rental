@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using MyApp.Application.Features.UserRole.Create;
+using MyApp.Application.Features.UserRole.GetAll;
 
 namespace MyApp.API.Controllers
 {
@@ -15,6 +16,7 @@ namespace MyApp.API.Controllers
             _mediator = mediator;
         }
 
+        [HttpPost]
         public IActionResult CreateUserRole([FromBody] CreateUserRoleCommand command)
         {
             var result = _mediator.Send(command).Result;
@@ -26,6 +28,13 @@ namespace MyApp.API.Controllers
             {
                 return BadRequest(result);
             }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetUserRole()
+        {
+            var userRole = await _mediator.Send(new GetAllUserRoleCommand());
+            return Ok(userRole);
         }
     }
 }

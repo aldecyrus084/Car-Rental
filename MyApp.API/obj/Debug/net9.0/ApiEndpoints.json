@@ -48,10 +48,20 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MyApp.API.Controllers.UserController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MyApp.API.Controllers.UserRoleController",
     "Method": "CreateUserRole",
     "RelativePath": "api/user-role",
-    "HttpMethod": "",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -61,6 +71,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApp.API.Controllers.UserRoleController",
+    "Method": "GetUserRole",
+    "RelativePath": "api/user-role",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {

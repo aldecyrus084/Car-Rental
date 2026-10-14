@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MyApp.Application.Features.Users.Create;
 using MyApp.Application.Features.Users.Get;
+using MyApp.Application.Features.Users.GetAll;
 
 namespace MyApp.API.Controllers
 {
@@ -28,6 +29,13 @@ namespace MyApp.API.Controllers
             {
                 return BadRequest(response);
             }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            var users = await _mediator.Send(new GetAllUsersCommand());
+            return Ok(users);
         }
 
         [HttpGet("{id:guid}")]

@@ -18,8 +18,4 @@
     <ProjectReference Include="..\MyApp.Domain\MyApp.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DTOs\UserRole\" />
-  </ItemGroup>
-
 </Project>
