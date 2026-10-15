@@ -84,6 +84,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MyApp.API.Controllers.UserRoleController",
+    "Method": "DeactivateUserRole",
+    "RelativePath": "api/user-role/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MyApp.API.Controllers.UserController",
     "Method": "GetUserById",
     "RelativePath": "api/User/{id}",

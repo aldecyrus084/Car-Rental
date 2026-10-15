@@ -1,7 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using MyApp.Application.Features.UserRole.Create;
+using MyApp.Application.Features.UserRole.Delete;
 using MyApp.Application.Features.UserRole.GetAll;
+using MyApp.Application.Features.Users.Delete;
 
 namespace MyApp.API.Controllers
 {
@@ -34,6 +36,20 @@ namespace MyApp.API.Controllers
         public async Task<IActionResult> GetUserRole()
         {
             var userRole = await _mediator.Send(new GetAllUserRoleCommand());
+            return Ok(userRole);
+        }
+
+
+        [HttpPut("{id:guid}/deactivate")]
+        public async Task<IActionResult> DeactivateUserRole(Guid id)
+        {
+            var userRole = await _mediator.Send(new DeleteUserRoleCommand
+            {
+                UserRoleId = id
+            });
+            if (!userRole.isSuccess)
+                return NotFound(userRole);
+
             return Ok(userRole);
         }
     }
