@@ -24,9 +24,9 @@ namespace MyApp.Infrastructure.Repository
             await _context.UserRoles.AddAsync(userRoles);
         }
 
-        public async Task<UserRoles?> GetActiveUserRoleByIdAsync(Guid Id)
+        public Task<UserRoles?> GetActiveUserRoleByIdAsync(Guid Id)
         {
-            return await _context.UserRoles.Where(x => x.IsActive).FirstOrDefaultAsync(x => x.UserRoleId == Id);
+            throw new NotImplementedException();
         }
 
         public async Task<IEnumerable<UserRoles>> GetAllActiveUserRolesAsync()
@@ -37,6 +37,11 @@ namespace MyApp.Infrastructure.Repository
         public async Task<IEnumerable<UserRoles>> GetAllUserRolesAsync()
         {
             return await _context.UserRoles.ToListAsync();
+        }
+
+        public async Task<UserRoles?> GetUserRoleByIdAsync(Guid Id)
+        {
+            return await _context.UserRoles.FirstOrDefaultAsync(x => x.UserRoleId == Id);
         }
 
         public async Task SaveChangesAsync()

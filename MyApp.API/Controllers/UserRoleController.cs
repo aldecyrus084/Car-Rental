@@ -40,10 +40,10 @@ namespace MyApp.API.Controllers
         }
 
 
-        [HttpPut("{id:guid}/deactivate")]
+        [HttpPut("{id:guid}/toggleStatus")]
         public async Task<IActionResult> DeactivateUserRole(Guid id)
         {
-            var userRole = await _mediator.Send(new DeleteUserRoleCommand
+            var userRole = await _mediator.Send(new UpdateUserRoleStatusCommand
             {
                 UserRoleId = id
             });

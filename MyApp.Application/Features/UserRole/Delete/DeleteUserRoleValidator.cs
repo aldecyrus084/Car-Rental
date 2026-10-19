@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MyApp.Application.Features.UserRole.Delete
 {
-    public class DeleteUserRoleValidator : AbstractValidator<DeleteUserRoleCommand>
+    public class DeleteUserRoleValidator : AbstractValidator<UpdateUserRoleStatusCommand>
     {
         public DeleteUserRoleValidator() 
         {

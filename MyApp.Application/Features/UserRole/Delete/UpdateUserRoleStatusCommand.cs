@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MyApp.Application.Features.UserRole.Delete
 {
-    public class DeleteUserRoleCommand : IRequest<GenericResponse<string>>
+    public class UpdateUserRoleStatusCommand : IRequest<GenericResponse<string>>
     {
         public Guid UserRoleId { get; set; }
     }

@@ -12,6 +12,7 @@ namespace MyApp.Application.Interfaces.Repository
         Task<UserRoles?> GetActiveUserRoleByIdAsync(Guid Id);
         Task<IEnumerable<UserRoles>> GetAllActiveUserRolesAsync();
         Task<IEnumerable<UserRoles>> GetAllUserRolesAsync();
+        Task<UserRoles?> GetUserRoleByIdAsync(Guid Id);
         Task CreateUserRoleAsync(UserRoles userRoles);
         Task SaveChangesAsync();
     }

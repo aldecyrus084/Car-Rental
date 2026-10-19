@@ -9,36 +9,36 @@ using System.Threading.Tasks;
 
 namespace MyApp.Application.Features.UserRole.Delete
 {
-    public class DeleteUserRoleHandler : IRequestHandler<DeleteUserRoleCommand, GenericResponse<string>>
+    public class UpdateUserRoleStatusHandler : IRequestHandler<UpdateUserRoleStatusCommand, GenericResponse<string>>
     {
         private readonly IUserRoleRepository _userRoleRepo;
 
-        public DeleteUserRoleHandler(IUserRoleRepository userRoleRepository)
+        public UpdateUserRoleStatusHandler(IUserRoleRepository userRoleRepository)
         {
             _userRoleRepo = userRoleRepository;
         }
 
-        public async Task<GenericResponse<string>> Handle(DeleteUserRoleCommand request, CancellationToken cancellationToken)
+        public async Task<GenericResponse<string>> Handle(UpdateUserRoleStatusCommand request, CancellationToken cancellationToken)
         {
             try
             {
-                var userRole = await _userRoleRepo.GetActiveUserRoleByIdAsync(request.UserRoleId);
+                var userRole = await _userRoleRepo.GetUserRoleByIdAsync(request.UserRoleId);
 
                 if(userRole == null)
                 {
                     return new GenericResponse<string>
                     {
-                        message = "User role not found or inactive.",
+                        message = "User role not found",
                         isSuccess = false
                     };
                 }
 
-                userRole.DeleteUserRole();
+                userRole.ToggleUserRoleStatus();
                 await _userRoleRepo.SaveChangesAsync();
 
                 return new GenericResponse<string>
                 {
-                    message = "User role deleted successfully.",
+                    message = "User role status updated successfully",
                     isSuccess = true
                 };
             }

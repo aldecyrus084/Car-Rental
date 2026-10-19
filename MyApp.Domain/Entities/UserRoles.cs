@@ -24,14 +24,11 @@ namespace MyApp.Domain.Entities
             IsActive = isActive;
         }
 
-        public void DeleteUserRole()
+        public void ToggleUserRoleStatus()
         {
-            IsActive = false;
+            IsActive = !IsActive;
         }
 
-        public void ReactivateUserRole()
-        {
-            IsActive = true;
-        }
+        
     }
 }

@@ -86,7 +86,7 @@
   {
     "ContainingType": "MyApp.API.Controllers.UserRoleController",
     "Method": "DeactivateUserRole",
-    "RelativePath": "api/user-role/{id}",
+    "RelativePath": "api/user-role/{id}/toggleStatus",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
