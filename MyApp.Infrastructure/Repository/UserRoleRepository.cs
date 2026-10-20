@@ -24,11 +24,6 @@ namespace MyApp.Infrastructure.Repository
             await _context.UserRoles.AddAsync(userRoles);
         }
 
-        public Task<UserRoles?> GetActiveUserRoleByIdAsync(Guid Id)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<IEnumerable<UserRoles>> GetAllActiveUserRolesAsync()
         {
             return await _context.UserRoles.Where(x => x.IsActive).ToListAsync();

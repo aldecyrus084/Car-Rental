@@ -26,7 +26,7 @@ namespace MyApp.Application.Features.Users.Create
             try
             {
 
-                var userRole = await _userRoleRepo.GetActiveUserRoleByIdAsync(request.UserRoleId);
+                var userRole = await _userRoleRepo.GetUserRoleByIdAsync(request.UserRoleId);
                 if(userRole == null)
                 {
                     return new GenericResponse<string>
@@ -37,7 +37,7 @@ namespace MyApp.Application.Features.Users.Create
                 }
 
                 var hashPassword = BCrypt.Net.BCrypt.HashPassword(request.Password);
-                var user = new MyApp.Domain.Entities.Users(request.FirstName, request.MiddleName, request.LastName, request.Email, request.PhoneNumber, hashPassword, request.UserRoleId, request.IsActive);
+                var user = new Domain.Entities.Users(request.FirstName, request.MiddleName, request.LastName, request.Email, request.PhoneNumber, hashPassword, request.UserRoleId, request.IsActive);
 
                 await _userRepo.CreateUserAsync(user);
                 await _userRepo.SaveChangesAsync();

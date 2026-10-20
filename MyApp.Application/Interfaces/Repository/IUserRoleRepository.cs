@@ -9,7 +9,6 @@ namespace MyApp.Application.Interfaces.Repository
 {
     public interface IUserRoleRepository
     {
-        Task<UserRoles?> GetActiveUserRoleByIdAsync(Guid Id);
         Task<IEnumerable<UserRoles>> GetAllActiveUserRolesAsync();
         Task<IEnumerable<UserRoles>> GetAllUserRolesAsync();
         Task<UserRoles?> GetUserRoleByIdAsync(Guid Id);

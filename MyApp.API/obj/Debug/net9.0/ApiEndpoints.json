@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "MyApp.API.Controllers.BranchController",
+    "Method": "GetAllBranch",
+    "RelativePath": "api/branch",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MyApp.API.Controllers.BranchController",
+    "Method": "CreateBranch",
+    "RelativePath": "api/branch",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "MyApp.Application.Features.Branch.Create.CreateBranchCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MyApp.API.Controllers.CustomerController",
     "Method": "CreateCustomer",
     "RelativePath": "api/customer",

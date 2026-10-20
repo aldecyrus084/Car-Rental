@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using MyApp.Application.DTOs;
+using MyApp.Application.DTOs.Branch;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MyApp.Application.Features.Branch.Create
 {
-    public class CreateBranchCommand : IRequest<GenericResponse<string>>
+    public class CreateBranchCommand : IRequest<GenericResponse<BranchResponseDTO>>
     {
         public string Name { get; set; }
         public string Address { get; set; }
