@@ -24,6 +24,7 @@ namespace MyApp.Application.Features.Users.GetAll
                 var users = await _userRepo.GetAllUsersAsync();
                 var userDTO = users.Select(user => new UserResponseDTO
                 {
+                    UserId = user.UserId,
                     FirstName = user.FirstName,
                     MiddleName = user.MiddleName,
                     LastName = user.LastName,
