@@ -42,6 +42,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MyApp.API.Controllers.CustomerController",
+    "Method": "GetListOfCustomers",
+    "RelativePath": "api/customer",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MyApp.API.Controllers.CustomerDocumentController",
     "Method": "CreateCustomerDocument",
     "RelativePath": "api/customer-document",

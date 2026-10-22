@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MyApp.Application.DTOs.Customer;
 using MyApp.Application.Interfaces.Repository;
 using MyApp.Domain.Entities;
 using MyApp.Infrastructure.Persistence;
@@ -29,9 +30,17 @@ namespace MyApp.Infrastructure.Repository
             return await _dbContext.Customers.Where(x => x.Status == "Active").ToListAsync();
         }
 
-        public async Task<IEnumerable<Customers>> GetAllCustomerAsync()
+        public async Task<IEnumerable<CustomerListResponseDTO>> GetAllCustomerAsync()
         {
-            return await _dbContext.Customers.ToListAsync();
+            return await _dbContext.Customers.AsNoTracking().Select(x => new CustomerListResponseDTO
+            {
+                CustomerId = x.CustomerId,
+                FullName = x.MiddleName != null ? x.FirstName + " " + x.MiddleName + " " + x.LastName : x.FirstName + " " + x.LastName,
+                Email = x.Email,
+                ContactNumber = x.PhoneNumber,
+                Rentals = x.RentalAgreements.Count(),
+                Status = x.Status
+            }).ToListAsync();
         }
 
         public async Task<Customers?> GetCustomerByIdAsync(Guid id)

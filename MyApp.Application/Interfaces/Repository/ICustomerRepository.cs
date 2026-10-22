@@ -1,4 +1,5 @@
-﻿using MyApp.Domain.Entities;
+﻿using MyApp.Application.DTOs.Customer;
+using MyApp.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace MyApp.Application.Interfaces.Repository
     {
         Task CreateCustomerAsync(Customers customer);
         Task<IEnumerable<Customers>> GetAllActivateCustomerAsync();
-        Task<IEnumerable<Customers>> GetAllCustomerAsync();
+        Task<IEnumerable<CustomerListResponseDTO>> GetAllCustomerAsync();
         Task<Customers?> GetCustomerByIdAsync(Guid id);
         Task SaveChangesAsync();
 

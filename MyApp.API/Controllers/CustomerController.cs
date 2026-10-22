@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using MyApp.Application.Features.Customer.Create;
+using MyApp.Application.Features.Customer.GetAll;
 
 namespace MyApp.API.Controllers
 {
@@ -16,9 +17,9 @@ namespace MyApp.API.Controllers
         }
 
         [HttpPost]
-        public IActionResult CreateCustomer([FromBody] CreateCustomerCommand command)
+        public async Task<IActionResult> CreateCustomer([FromBody] CreateCustomerCommand command)
         {
-            var result = _mediator.Send(command).Result;
+            var result = await _mediator.Send(command);
             if (result.isSuccess)
             {
                 return Ok(result);
@@ -27,6 +28,13 @@ namespace MyApp.API.Controllers
             {
                 return BadRequest(result);
             }
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetListOfCustomers()
+        {
+            var result = await _mediator.Send(new GetCustomerListCommand());
+            return Ok(result);
         }
     }
 }
