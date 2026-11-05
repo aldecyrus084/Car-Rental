@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "MyApp.API.Controllers.AuthController",
+    "Method": "LoginUser",
+    "RelativePath": "api/auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "MyApp.Application.Features.Auth.Login.LoginCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MyApp.API.Controllers.BranchController",
     "Method": "GetAllBranch",
     "RelativePath": "api/branch",

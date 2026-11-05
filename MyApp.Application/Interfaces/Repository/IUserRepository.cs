@@ -15,6 +15,7 @@ namespace MyApp.Application.Interfaces.Repository
         Task CreateUserAsync(Users user);
         Task<Users?> GetActiveUserById(Guid id);
         Task<Users?> GetUserByIdAsync(Guid id);
+        Task<Users?> GetUserByEmailAsync(string email);
         Task SaveChangesAsync();
     }
 }

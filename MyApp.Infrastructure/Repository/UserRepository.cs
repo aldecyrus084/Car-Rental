@@ -53,5 +53,10 @@ namespace MyApp.Infrastructure.Repository
             return await _dbContext.Users.Include(x => x.UserRole).FirstOrDefaultAsync(x => x.UserId == id);
                 
         }
+
+        public async Task<Users?> GetUserByEmailAsync(string email)
+        {
+            return await _dbContext.Users.Include(x => x.UserRole).FirstOrDefaultAsync(x => x.Email == email);
+        }
     }
 }

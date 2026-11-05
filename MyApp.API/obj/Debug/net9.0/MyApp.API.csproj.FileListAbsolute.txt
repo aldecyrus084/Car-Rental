@@ -384,3 +384,9 @@ C:\Users\admin\source\repos\Car-Rental\MyApp.API\bin\Debug\net9.0\ru\Microsoft.C
 C:\Users\admin\source\repos\Car-Rental\MyApp.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\admin\source\repos\Car-Rental\MyApp.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\admin\source\repos\Car-Rental\MyApp.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\aldec\source\repos\Car-Rental\MyApp.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\aldec\source\repos\Car-Rental\MyApp.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\aldec\source\repos\Car-Rental\MyApp.API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\aldec\source\repos\Car-Rental\MyApp.API\bin\Debug\net9.0\Microsoft.Bcl.Cryptography.dll
+C:\Users\aldec\source\repos\Car-Rental\MyApp.API\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\aldec\source\repos\Car-Rental\MyApp.API\bin\Debug\net9.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
